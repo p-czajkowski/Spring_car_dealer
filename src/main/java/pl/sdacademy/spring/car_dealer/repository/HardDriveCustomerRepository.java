@@ -1,8 +1,10 @@
 package pl.sdacademy.spring.car_dealer.repository;
 
+import org.springframework.stereotype.Repository;
 import pl.sdacademy.spring.car_dealer.model.Customer;
 
 import java.util.List;
+
 
 public class HardDriveCustomerRepository extends AbstractHardDriveRepository<Customer> implements CustomerRepository {
     private final String repositoryLocation;
