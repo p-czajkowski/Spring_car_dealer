@@ -1,5 +1,6 @@
 package pl.sdacademy.spring.car_dealer;
 
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pl.sdacademy.spring.car_dealer.controller.CarDataController;
@@ -54,11 +55,8 @@ public class ApplicationConfiguration {
     }
 
     //
-    @Bean
-    public Application application(CarDataController carDataController, SellingController sellingController) {
-        Application application = new Application();
-        application.setCarDataController(carDataController);
-        application.setSellingController(sellingController);
-        return application;
+    @Bean(autowire = Autowire.BY_TYPE)
+    public Application application() {
+        return new Application();
     }
 }
